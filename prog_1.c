@@ -1,40 +1,11 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include <stack.h>
+#include <unordered_map>
 #define MAX_SIZE 20
 char opening[3]={'(','{','['};
 char closing[3]={')','}',']'};
 //this would be the stack
-typedef struct stack{
-    char key[MAX_SIZE];
-    int top;
-} Stack;
-
-//to check if its empty
-bool isempty(Stack* s){
-    if(s->top==-1) return true;
-    return false;
-}
-
-
-//to push
-void push(Stack* s,char c){
-    s->top+=1;
-    s->key[s->top]=c;
-
-}
-
-//to pop the values
-char pop(Stack*s){
-    char ch;
-    if (!isempty(s)){
-    char ch=s->key[s->top];
-    s->top-=1;
-    }
-    else{
-        return "0";
-    }
-    return ch;
-}
 
 //to check if it is opening or closing bracket
 int isbracket(char c){
@@ -59,9 +30,11 @@ for(i=0;i<size_;i++){
         push(s,str[i]);
         continue;//then we just look for next string 
     }
+
     
 
 }
 }
 
 }
+
