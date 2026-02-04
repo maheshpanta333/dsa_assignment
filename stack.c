@@ -6,16 +6,18 @@ char pop(Stack*s){
     if (!isempty(s)){
     char ch=s->key[s->top];
     s->top-=1;
+    return ch;
     }
     else{
-        return "0";
+        return '0';
     }
-    return ch;
+    
 }
 
 void push(Stack* s,char c){
+    if(!isfull(s)){
     s->top+=1;
-    s->key[s->top]=c;
+    s->key[s->top]=c;}
 
 }
 bool isempty(Stack* s){
@@ -29,4 +31,14 @@ void initialise(Stack* s){
 bool isfull(Stack* s){
     if(s->top==MAX_SIZE-1) return true;
     return false;
+}
+
+void remove_pos(Stack*s, int x){
+    int i=s->top;
+    if (isempty(s)) return;
+    for (int i;i>x;i++){
+       s->key[i]=s->key[i+1];
+
+    }
+   s->top-=1;
 }

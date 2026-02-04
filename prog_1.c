@@ -1,11 +1,9 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include <string.h>
 #include <stack.h>
-#include <unordered_map>
-#define MAX_SIZE 20
-char opening[3]={'(','{','['};
-char closing[3]={')','}',']'};
-//this would be the stack
+char opening[3] = {'(', '{', '['};
+char closing[3] = {')', '}', ']'};
 
 //to check if it is opening or closing bracket
 int isbracket(char c){
@@ -22,7 +20,7 @@ int i=0;
 int size_=size(str);
 int isbracket_;
 Stack* s;
-s->top=-1;
+initialise(s);
 for(i=0;i<size_;i++){
     isbracket_=isbracket(str[i]);
     if(isbracket_!=3){//here 3 means there should be no brackets
