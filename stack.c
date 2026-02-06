@@ -4,7 +4,7 @@
 char pop(Stack*s){
     char ch;
     if (!isempty(s)){
-    char ch=s->key[s->top];
+     ch=s->key[s->top];
     s->top-=1;
     return ch;
     }
