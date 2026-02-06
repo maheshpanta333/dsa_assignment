@@ -5,7 +5,10 @@
 
 
 bool get_associativity(int a,int b){
+
 if(a==1 && b==1) return false;
+
+
 //we return false for right to left associativity in expoential operator else we return true
 return true;
 }
