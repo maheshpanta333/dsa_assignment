@@ -1,8 +1,8 @@
 # Doubly Linked List Implementation
 
 # Problem:
-Create a doubly linked list in C that supports inserting nodes at the end and traversing the list in reverse order using a tail pointer.
-
+Write and Implement the reverse traversal algorithm in the linked list. Write main() to
+demonstrate the use of the function.
 # My Solution
 
 ## Files
