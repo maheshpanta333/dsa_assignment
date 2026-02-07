@@ -65,12 +65,20 @@ void reversal_traversal(List* list){
 
 //this function would insert certain value at the given position
 void insert_valueat(List* list, int x, int pos){
-  if(list->head==NULL|| pos <= 0){ 
+  if(list->head==NULL){ 
     Node* newnode = createnode(x);
     list->head = newnode;
     list->tail = newnode;
         return;
     }
+    if( pos<=0){
+        Node* newnode = createnode(x);
+        newnode->next=list->head;
+        list->head->prev=newnode;
+        list->head=newnode;
+        return;
+    }
+    
     Node* temp=list->head;
     int i=0;
     for(i=0;i<pos-1&& temp->next != NULL;i++){
@@ -95,6 +103,34 @@ void insert_valueat(List* list, int x, int pos){
 }
 
 
+//this function would delete any key at the given position
+void delete_node(List*list, int pos){
+    if(list->head==NULL){
+        printf("The given list is empty!");
+    }
+    else{
+        if(pos<=0){
+            Node* temp=list->head;
+            list->head=temp->next;
+            if(list->head!=NULL)temp->next->prev=NULL;
+            free(temp);
+        }
+        else{
+            Node* temp=list->head;
+            int i=0;
+            for(i=0;i<pos-1&& temp->next != NULL;i++){
+                temp=temp->next;
+        
+            }
+            Node* delnode=temp->next;
+            temp->next=delnode->next;
+            delnode->next->prev=temp;
+            free(delnode);
+
+        }
+    }
+}
+
 
 int main(){
     List* list=(List*)calloc(1,sizeof(List));//using calloc here to set the values of pointers null
@@ -104,7 +140,18 @@ int main(){
     insertatend(list,8);
     insertatend(list,9);
     reversal_traversal(list);
+    printf("Insertion at any position:\n");
     insert_valueat(list,10,3);
+    reversal_traversal(list);
+    insert_valueat(list,110,0);
+
+    reversal_traversal(list);
+    insert_valueat(list,222,1);
+    reversal_traversal(list);
+    printf("Deletion of node:\n");
+    delete_node(list,3);
+    reversal_traversal(list);
+    delete_node(list,0);
     reversal_traversal(list);
     deleteall(list);
 }
