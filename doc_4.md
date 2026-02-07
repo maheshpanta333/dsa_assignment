@@ -6,7 +6,7 @@ demonstrate the use of the functions.<br>
 # Solution:
 ### Files
 
-- doubly_linked_list.c (contains node struct, list logic, and main function)
+- prog_4.c (contains node struct, list logic, and main function)
 
 ### Compile and Run
 ```bash
