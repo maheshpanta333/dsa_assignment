@@ -16,7 +16,7 @@ Write a program that generates a list of **N random integers** in the range **[1
 
 ### Files
 
-- prog_sort.c (contains all sorting functions and the main function)
+- prog_8.c (contains all sorting functions and the main function)
 
 ---
 
