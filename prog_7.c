@@ -13,7 +13,7 @@ struct Graph {
 
 // make graph empty
 struct Graph* createGraph(int n) {
-    struct Graph *g = malloc(sizeof(struct Graph));
+    struct Graph *g =(struct Graph*) malloc(sizeof(struct Graph));
     g->n = n;
     
     for (int i = 0; i < n; i++) {

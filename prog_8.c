@@ -181,12 +181,14 @@ int main(){
     while(con){
     printf("\n Which algorithm do you want to test?\n1) Bubble sort\n2)Insertion\n3)Selection sort\n4)Merge sort\n5)Exit the program!\n");
     scanf("%d",&choice);
+    if(choice!=5){
     printf("What should be the size of the array?\n");
     scanf("%d",&size);
     array=(int*)realloc(array,size*sizeof(int));
     generate_random_array(array, size);
     printf("Unsorted array is :");
     display(array,size);
+    }
     switch(choice){
         case 1:
         bubblesort(array,size);
