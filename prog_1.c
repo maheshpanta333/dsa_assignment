@@ -5,7 +5,9 @@
 #include <stdlib.h>
 char opening[3] = {'(', '{', '['};
 char closing[3] = {')', '}', ']'};
-
+/*
+i am using stach.h file that i made because i need to use stack for two questions
+*/
 //to check if the opening and closing brackets match
 bool ismatch(char c1,char c2){//c1 has to be openinig bracket and the closing bracket alwasy has to be c2
     int i=0;
